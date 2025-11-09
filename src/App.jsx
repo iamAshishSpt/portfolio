@@ -1,27 +1,14 @@
-import Testimonials from "./sections/Testimonials";
-import Footer from "./sections/Footer";
-import Contact from "./sections/Contact";
-import TechStack from "./sections/TechStack";
-import Experience from "./sections/Experience";
-import Hero from "./sections/Hero";
-import ShowcaseSection from "./sections/ShowcaseSection";
-import LogoShowcase from "./sections/LogoShowcase";
-import FeatureCards from "./sections/FeatureCards";
-import Navbar from "./components/NavBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import ProjectDetails from "./pages/ProjectDetails";
 
 const App = () => (
-  <>
-    <Navbar />
-    <Hero />
-    <ShowcaseSection />
-    {/* <LogoShowcase /> */}
-    <FeatureCards />
-    <Experience />
-    <TechStack />
-    <Testimonials />
-    <Contact />
-    <Footer />
-  </>
+	<BrowserRouter>
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/project/:id" element={<ProjectDetails />} />
+		</Routes>
+	</BrowserRouter>
 );
 
 export default App;
